@@ -1,0 +1,21 @@
+<div class="container">
+  <h1 class="text-center">Your result</h1>
+  <h2>Your word:</h2>
+  <div class="result">
+    <%= @attempt.upcase %>
+  </div>
+  <h2>The grid:</h2>
+  <div class="result">
+    <%= @letters %>
+  </div>
+  <h2>Your score:</h2>
+  <div class="result">
+    <%= @result[:score] %>
+  </div>
+    <h2>Your time:</h2>
+  <div class="result">
+    <%= @result[:time] %>
+  </div>
+  <h2 class="text-center"><%= @result[:message] %></h2>
+  <h3 class="text-center"><%= link_to "Play again", new_path %></h3>
+</div>

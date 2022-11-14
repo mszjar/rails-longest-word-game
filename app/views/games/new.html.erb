@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>New Game</h1>
+
+  <div class="d-flex flex-row">
+    <% @letters.each do |letter| %>
+      <div class="letter-card p-2"><%= letter[0] %></div>
+    <% end %>
+  </div>
+
+  <form action="/score" method="post" data-turbo="false">
+  <div class="form-group mb-16">
+    <label for="input">Your word</label>
+    <input type="text" name="attempt" class="form-control" placeholder="Enter your attempt">
+    <small class="form-text text-muted mb-16">You have to enter the longest english word you can find using only letters in the grid.</small>
+  </div>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters.join%>
+  <button type="submit" class="btn btn-primary">Enter</button>
+</form>
+</div>
